@@ -1,0 +1,51 @@
+{
+  "target": "https://example.com",
+  "status": "success",
+  "findings": {
+    "headers": [
+      {
+        "title": "Missing Content-Security-Policy",
+        "severity": "medium",
+        "detail": "The target did not return a Content-Security-Policy header, which can increase exposure to client-side injection risks."
+      },
+      {
+        "title": "Missing X-Frame-Options",
+        "severity": "medium",
+        "detail": "The target did not return an X-Frame-Options header, which may increase clickjacking exposure."
+      }
+    ],
+    "cookies": [
+      {
+        "title": "Cookie missing Secure flag",
+        "severity": "medium",
+        "detail": "A session-related cookie was observed without the Secure attribute."
+      }
+    ],
+    "forms": [
+      {
+        "title": "Login form discovered",
+        "severity": "info",
+        "detail": "A login-style form was detected with username/email and password input fields."
+      }
+    ],
+    "links": [
+      {
+        "title": "External links present",
+        "severity": "info",
+        "detail": "The page contains external links that may be relevant for manual review."
+      }
+    ],
+    "technology": [
+      {
+        "title": "Visible server technology indicator",
+        "severity": "low",
+        "detail": "The response exposed a visible server technology banner in the headers."
+      }
+    ]
+  },
+  "recommendations": [
+    "Add a Content-Security-Policy header appropriate to the application.",
+    "Set missing cookie security flags such as Secure and HttpOnly where applicable.",
+    "Review exposed forms and ensure CSRF and input validation controls are in place."
+  ]
+}
