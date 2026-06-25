@@ -22,6 +22,16 @@ The goal was not to build a full penetration testing platform, but to create a f
 
 ---
 
+## Project Highlights
+
+- Built a full Flask-based web scanning workflow end to end
+- Designed a custom frontend reporting UI with tabbed results and overview charts
+- Structured findings into dedicated sections such as headers, cookies, forms, links, scripts, and technology indicators
+- Added light / dark mode support and downloadable report output
+- Packaged the project as a deployable web application rather than a command-line-only script
+
+---
+
 ## Core Capabilities
 
 Dissect v1 currently supports:
@@ -77,8 +87,6 @@ Dissect organizes scan results into separate report sections so findings are eas
 ---
 
 ## Screenshots
-
-> Replace these paths with your final screenshots after you add them to the repository.
 
 ### Landing Page
 ![Landing Page](docs/screenshots/landing-page-light.png)
