@@ -1,0 +1,31 @@
+{
+  "target": "https://example.com",
+  "final_url": "https://example.com",
+  "scan_timestamp": "2026-06-25T18:30:00Z",
+  "status": "success",
+  "summary": {
+    "total_findings": 6,
+    "critical": 0,
+    "high": 1,
+    "medium": 3,
+    "low": 2,
+    "info": 4
+  },
+  "coverage": {
+    "headers_checked": true,
+    "cookies_checked": true,
+    "forms_checked": true,
+    "links_checked": true,
+    "scripts_checked": true,
+    "technology_checked": true,
+    "sensitive_paths_checked": true
+  },
+  "overview": {
+    "server": "example-server",
+    "content_type": "text/html; charset=UTF-8",
+    "response_time_ms": 412,
+    "forms_detected": 2,
+    "links_detected": 14,
+    "scripts_detected": 4
+  }
+}
