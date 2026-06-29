@@ -1,7 +1,7 @@
 # 🛡️ Dissect
 
 <p align="center">
-  <img src="assets/logo.png" alt="Dissect Logo" width="180">
+  <img src="assets/Dissect-banner.jpg" alt="Dissect Logo" width="180">
 </p>
 
 <p align="center">
