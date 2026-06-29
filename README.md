@@ -290,6 +290,16 @@ Cybersecurity Student • Security Enthusiast • Future Cybersecurity Engineer
 
 ---
 
+## Development Model
+
+Dissect is publicly available as a hosted web application. This repository serves as the official project page, containing documentation, architecture, release notes, and project updates.
+
+The production implementation is maintained in a private repository while the project continues to evolve.
+
+Community feedback, feature requests, bug reports, and suggestions are welcome through GitHub Issues and Discussions.
+
+---
+
 <p align="center">
 If you found this project interesting, consider ⭐ starring the repository.
 </p>
