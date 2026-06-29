@@ -1,0 +1,23 @@
+# Changelog
+
+All notable changes to Dissect will be documented in this file.
+
+## [1.0.0] - 2026-06-29
+
+### Added
+- Initial public release
+- Passive web security scanning
+- HTTP security header analysis
+- Cookie security analysis
+- Authentication surface detection
+- HTML form analysis
+- JavaScript-rendered DOM analysis using Playwright
+- Executive security report
+- Technical security report
+- Responsive web interface
+- Docker deployment support
+
+### Fixed
+- Playwright deployment compatibility on Railway
+- Playwright deployment compatibility on Render
+- JavaScript-rendered form detection improvements
