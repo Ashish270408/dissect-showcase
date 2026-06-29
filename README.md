@@ -5,95 +5,147 @@
 </p>
 
 <p align="center">
-<b>Modern Web Vulnerability Scanner</b><br>
-Professional • Educational • Security Focused
+<b>Passive Web Security Scanner for Modern Websites</b><br>
+Fast • Non-Intrusive • Professional Reporting
 </p>
 
 <p align="center">
 
-![Version](https://img.shields.io/badge/version-v0.9--beta-blue)
-![Status](https://img.shields.io/badge/status-Beta-success)
+![Version](https://img.shields.io/badge/version-v1.0-blue)
+![Status](https://img.shields.io/badge/status-Stable-success)
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python\&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-3.x-black?logo=flask)
+![Playwright](https://img.shields.io/badge/Playwright-Enabled-2EAD33?logo=playwright)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 </p>
 
 ---
 
-## 🌐 Live Demo
+# 🌐 Live Demo
 
 **https://dissect.up.railway.app/**
 
 ---
 
-## 📖 Overview
+# 📖 Overview
 
-Dissect is a web-based vulnerability scanner built to help developers, students, and security enthusiasts identify common security misconfigurations in web applications.
+Dissect is a **passive web security scanner** designed to help developers, cybersecurity students, and security professionals identify common web security misconfigurations without performing intrusive testing.
 
-The scanner analyzes publicly accessible web resources and presents findings through two complementary reports:
+The scanner analyzes publicly accessible web resources—including HTTP responses, browser-rendered content, cookies, authentication surfaces, forms, and client-side resources—to provide meaningful security insights through structured reports.
 
-* **Executive Report** – High-level security overview for quick assessment.
-* **Technical Report** – Detailed findings with associated risks and recommendations.
-
-The project focuses on providing meaningful security insights through a clean and intuitive interface rather than overwhelming users with raw scanner output.
+Unlike active vulnerability scanners, Dissect **does not attempt exploitation or modify server state**, making it suitable for defensive security reviews and authorized assessments.
 
 ---
 
-# ✨ Features
+# ✨ Core Capabilities
 
-## HTTP Security Analysis
+* ✅ Passive Security Assessment
+* ✅ HTTP Security Header Analysis
+* ✅ Cookie Security Review
+* ✅ Authentication Surface Detection
+* ✅ HTML Form Discovery
+* ✅ JavaScript-Rendered DOM Analysis
+* ✅ Technology Fingerprinting
+* ✅ Interesting Endpoint Discovery
+* ✅ Executive & Technical Reports
+* ✅ Responsive Web Interface
 
-* Detect missing security headers
-* Analyze response headers
-* Redirect analysis
-* Response information collection
+---
+
+# 🔍 Scanner Modules
+
+## HTTP & Transport Security
+
+* Security Header Analysis
+* Response Header Inspection
+* Redirect Chain Analysis
+* Transport Security Review
 
 ---
 
 ## Cookie Security
 
-* Secure Flag validation
-* HttpOnly detection
-* SameSite analysis
-* Session cookie inspection
+* Secure Attribute Validation
+* HttpOnly Detection
+* SameSite Analysis
+* Session Cookie Review
+* Cookie Risk Assessment
 
 ---
 
-## Form Analysis
+## Authentication Surface Analysis
+
+* Login Page Detection
+* Username Field Discovery
+* Password Field Detection
+* Password Reset Discovery
+* Registration Form Detection
+* Authentication Workflow Analysis
+
+---
+
+## HTML Form Analysis
 
 * Login Forms
 * Registration Forms
 * Contact Forms
 * Search Forms
 * Password Reset Forms
+* Hidden Input Detection
+* Suspicious Parameter Identification
+
+---
+
+## Browser Rendering
+
+Using Playwright, Dissect analyzes JavaScript-rendered pages to inspect content that is unavailable through traditional HTTP requests.
+
+Capabilities include:
+
+* JavaScript-rendered DOM Analysis
+* Dynamic Authentication Detection
+* SPA Login Discovery
+* Client-side Resource Inspection
 
 ---
 
 ## Risk Assessment
 
-* Missing Header Detection
-* Severity Classification
+* Missing Security Header Detection
+* Security Severity Classification
 * Risk Explanation
-* Security Recommendations
+* Actionable Security Recommendations
 
 ---
 
 ## Reporting
 
-* Executive Report
-* Technical Report
-* Structured Findings
-* Easy-to-read Security Summary
+Dissect generates two complementary reports:
 
----
+### Executive Report
 
-## User Interface
+Designed for managers, developers, and quick assessments.
 
-* Responsive Design
-* Clean Modern UI
-* Fast Scan Workflow
-* Mobile Friendly
+Includes:
+
+* Overall Security Score
+* Executive Summary
+* Key Findings
+* Risk Breakdown
+* Recommendations
+
+### Technical Report
+
+Designed for developers and security practitioners.
+
+Includes:
+
+* Complete Scan Results
+* Detailed Technical Findings
+* Evidence
+* Risk Classification
+* Security Recommendations
 
 ---
 
@@ -123,22 +175,22 @@ The project focuses on providing meaningful security insights through a clean an
                     User
                       │
                       ▼
-            Flask Web Application
+             Flask Web Application
                       │
                       ▼
-               Scanning Engine
-                      │
+             Passive Scanning Engine
         ┌─────────────┼─────────────┐
         │             │             │
         ▼             ▼             ▼
-   Header Scan   Cookie Scan   Form Analysis
+   HTTP Analysis  Browser Render  HTML Parsing
+    (Requests)    (Playwright)   (BeautifulSoup)
         │             │             │
         └─────────────┼─────────────┘
                       ▼
-              Risk Assessment
+               Analysis Engine
                       │
                       ▼
-            Report Generation
+               Risk Assessment
                       │
         ┌─────────────┴─────────────┐
         ▼                           ▼
@@ -149,77 +201,95 @@ The project focuses on providing meaningful security insights through a clean an
 
 # 🛠️ Technology Stack
 
-| Category           | Technologies          |
-| ------------------ | --------------------- |
-| Backend            | Python, Flask         |
-| Frontend           | HTML, CSS, JavaScript |
-| HTTP Analysis      | Requests              |
-| HTML Parsing       | BeautifulSoup         |
-| Browser Automation | Playwright            |
-| Parsing            | lxml                  |
+| Category          | Technology              |
+| ----------------- | ----------------------- |
+| Backend           | Python, Flask           |
+| Frontend          | HTML, CSS, JavaScript   |
+| Browser Rendering | Playwright              |
+| HTTP Analysis     | Requests                |
+| HTML Parsing      | BeautifulSoup           |
+| XML Parsing       | lxml                    |
+| Deployment        | Docker, Railway, Render |
 
 ---
 
-# 🚀 Why Dissect?
+# 🎯 Design Philosophy
 
-Dissect was developed as a practical cybersecurity project to demonstrate modern web application security analysis through an intuitive interface and structured reporting.
+Dissect follows a **passive-first** approach to web security assessment.
 
-Instead of acting as a penetration testing framework, Dissect emphasizes understanding common security issues and presenting them in a format that is accessible to both technical and non-technical audiences.
+The scanner intentionally avoids:
+
+* Payload Injection
+* Exploitation
+* Brute Force Attacks
+* Server Modification
+* Intrusive Testing
+
+Instead, it focuses on identifying security weaknesses that are observable through publicly accessible resources and browser-rendered content.
 
 ---
 
-# 🗺️ Roadmap
+# 🚀 Roadmap
 
 ## Version 1.0
 
-* ✅ Security Header Analysis
+* ✅ Passive Security Scanner
+* ✅ HTTP Security Analysis
 * ✅ Cookie Analysis
-* ✅ Form Analysis
-* ✅ Executive Reports
-* ✅ Technical Reports
+* ✅ Authentication Surface Detection
+* ✅ HTML Form Analysis
+* ✅ Browser Rendering
+* ✅ Executive Report
+* ✅ Technical Report
+* ✅ Responsive Interface
 
 ---
 
-## Planned Features
+## Future Enhancements
 
 * SSL/TLS Certificate Analysis
-* robots.txt Analysis
-* sitemap.xml Analysis
 * DNS Information
 * WHOIS Information
+* robots.txt Analysis
+* sitemap.xml Analysis
+* Multi-page Crawling
+* Historical Scan Comparison
 * PDF Report Export
-* Scan History
 * User Dashboard
 * Scheduled Scans
 
 ---
 
-# ⚠️ Responsible Usage
+# ⚠️ Responsible Use
 
 Dissect is intended for educational purposes and authorized security assessments only.
 
-Only scan systems that you own or have explicit permission to test.
+Only scan systems that you own or have explicit permission to assess.
 
-The developers assume no responsibility for misuse of this software.
+Users are responsible for ensuring compliance with applicable laws and regulations.
 
 ---
 
-# 🔒 Source Code
+# 📚 Documentation
 
-The production source code is maintained in a private repository.
-
-This public repository serves as the official project page containing documentation, updates, and information about Dissect.
+This repository serves as the official documentation and project information page for Dissect, including its architecture, capabilities, development roadmap, and updates.
 
 ---
 
 # 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
+
+---
+
+# 👨‍💻 Author
+
+**Ashish Agrawal**
+
+Cybersecurity Student • Security Enthusiast • Future Cybersecurity Engineer
 
 ---
 
 <p align="center">
-
-Made with ❤️ for the cybersecurity community.
-
+If you found this project interesting, consider ⭐ starring the repository.
 </p>
